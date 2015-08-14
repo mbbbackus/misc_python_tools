@@ -17,19 +17,26 @@ for line in content:
         checking_in = False
         new = line.replace('\n','')
         now = datetime.now()
-        new += "{}:{},".format(now.hour, now.minute)
+        minute = now.minute
+	if minute < 10:
+            minute = '0' + str(minute)
+	new += "{}:{},".format(now.hour, minute)
         inhour = int(larr[1].split(':')[0])
         inminute = int(larr[1].split(':')[1])
         diff = (now.hour - inhour)*60 - inminute + now.minute
         new += "{}\n".format(float(diff/60) + float((diff%60))/60.0)
         updated += new
+
 if checking_in:
     new = ""
     now = datetime.now()
     date = now.date()
     new += str(date) + ","
     time = now.time
-    new += "{}:{},".format(now.hour, now.minute)
+    minute = now.minute
+    if minute < 10:
+        minute = '0' + minute
+    new += "{}:{},".format(now.hour, minute)
     updated += new
 print updated
 target.write(updated)
