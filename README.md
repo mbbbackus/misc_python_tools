@@ -13,3 +13,11 @@ As of right now, it contains:
         - bug fixes:
             - Fixed bug where formatting would not indent dictionaries
             - Changed json tools from script to a module
+    - NBA stats application
+        - Parses HTML info to create a small database of nba player stats
+        - Can take player and stat arguments and return any player's stats
+        - Stat source: http://basketball.realgm.com/nba/stats
+        - To do:
+            - Improve stat gathering, possibly create scraper to get info
+                or retrieve stats straight from webpage
+            - Use Django to create web UI

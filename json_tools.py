@@ -1,12 +1,12 @@
 #!/usr/bin/python
 import json
 
-filepath = sys.argv[1]
-file = open(filepath)
-json_info = json.load(file)
-indent = "   "
+#filepath = sys.argv[1]
+#file = open(filepath)
+#json_info = json.load(file)
 
 def pr(thing_to_print, num_indents):
+    indent = "   "
     s = indent * num_indents
     return s + thing_to_print
 
